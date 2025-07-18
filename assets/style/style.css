@@ -84,10 +84,6 @@ a.text-muted:hover {
   display: block;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
 .card.light-green:hover {
   background-color: #def1de;
 }
@@ -140,6 +136,35 @@ header, footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+@keyframes slideColors {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+header .logo {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  color: #262626;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(to left, #262626, #737373, #262626, #737373);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: black;
+  transition: -webkit-text-fill-color 0.4s ease;
+}
+header .logo:hover {
+  -webkit-text-fill-color: transparent;
+  animation: slideColors 1s linear infinite;
 }
 
 nav {
