@@ -1,0 +1,29 @@
+<div class="page-container">
+  <header>
+    <section class="container">
+      <a href="/" class="logo">.inkori</a>
+      <nav>
+        <a class="text-muted" href="#">Explore</a>
+        <a class="text-muted" href="#">Create</a>
+      </nav>
+      <button class="button-default raised" [routerLink]="['/app/login']">
+        Get started
+      </button>
+    </section>
+  </header>
+
+  <main>
+    <router-outlet />
+  </main>
+
+  <footer>
+    <section class="container">
+      <p>© 2025 Inkori</p>
+      <nav>
+        <a href="#" class="text-muted">About</a>
+        <a href="#" class="text-muted">Help</a>
+        <a href="#" class="text-muted">Terms & Rules</a>
+      </nav>
+    </section>
+  </footer>
+</div>

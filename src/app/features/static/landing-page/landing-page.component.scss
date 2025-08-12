@@ -1,0 +1,77 @@
+@use 'variables' as vars;
+@use 'components';
+
+section.title-container {
+    text-align: center;
+
+    .title {
+        font-size: 3rem;
+        margin-bottom: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 2rem;
+    }
+
+    .subtitle {
+        color: vars.$gray;
+        font-size: 1.5rem;
+    }
+}
+
+section.features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.slash-bar {
+    width: 8px;
+    height: 3.5rem;
+    min-width: 8px;
+    background: #c0c0c0;
+    border-radius: 6px;
+    transform: rotate(20deg);
+    box-shadow: inset 2px 4px 6px vars.$light-gray, inset -8px 0 7px vars.$white;
+}
+
+/* #region Media Queries */
+@media only screen and (min-width: 700px) {
+    .title-container .title.mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 699px) {
+    .title-container {
+        .title {
+            font-size: 2rem !important;
+            flex-direction: column;
+
+        }
+
+        .title:not(.mobile) {
+            display: none;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+        }
+    }
+
+    .features {
+        grid-template-columns: unset !important;
+    }
+}
+/* #endregion */
+
+/* #region Animations */
+@keyframes slideColors {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+/* #endregion */

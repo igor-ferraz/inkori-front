@@ -1,0 +1,144 @@
+@use 'variables' as vars;
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.container.col-direction {
+    flex-direction: column;
+}
+
+.container.row-direction {
+    flex-direction: row;
+}
+
+.text-muted {
+    color: vars.$gray;
+}
+
+a.text-muted {
+    text-decoration: none;
+    transition: color .15s;
+}
+
+a.text-muted:hover {
+    color: vars.$black;
+}
+
+.card {
+    text-align: center;
+    background: vars.$white;
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: all .3s;
+
+    .title {
+        display: flex;
+        padding: 0;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: .75rem;
+        font-weight: 500;
+        font-size: 1.25rem;
+
+        .icon-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            padding: 0.5rem;
+            line-height: 0;
+
+            .icon svg {
+                width: 100%;
+                height: auto;
+                max-width: 2rem;
+                display: block;
+            }
+        }
+
+    }
+}
+
+.card.light-green:hover {
+    background-color: #def1de;
+}
+
+.card.light-pink:hover {
+    background-color: #f1dede;
+}
+
+.card.light-purple:hover {
+    background-color: #ecdef1;
+}
+
+.raised {
+    box-shadow: 7px 7px 14px vars.$light-gray, -5px -5px 14px #fff;
+}
+
+.inset {
+    box-shadow: inset 7px 7px 14px  vars.$light-gray, inset -7px -7px 14px #fff;
+}
+
+.button-default {
+    font-size: .875rem;
+    line-height: 1.25rem;
+    background-color: vars.$white;
+    color: vars.$black;
+    display: flex;
+    gap: .75rem;
+    border-radius: 1.5rem;
+    padding: 1rem 2rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all .4s;
+    text-wrap: nowrap;
+}
+
+.button-default:hover {
+    background-color: vars.$white-dark;
+}
+
+.button-default:active {
+    background-color: vars.$white;
+    color: vars.$black;
+    box-shadow: inset 4px 5px 7px 0px vars.$light-gray, -8px -8px 16px vars.$white;
+}
+
+/* #region Media Queries */
+@media only screen and (max-width: 866px) {
+    .card .title {
+        flex-direction: column;
+    }
+
+}
+
+@media only screen and (max-width: 699px) {
+    .card {
+        gap: 1.25rem;
+
+        .title .icon {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .button-default {
+        padding: 1rem;
+    }
+}
+/* #endregion */

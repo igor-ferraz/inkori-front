@@ -1,0 +1,74 @@
+@use 'variables' as vars;
+@use 'components';
+
+.page-container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header, footer {
+    width: 100%;
+    padding: 1.75rem 2.5rem;
+    display: flex;
+    justify-content: center;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 2rem;
+    }
+}
+
+header .logo {
+    user-select: none;
+    cursor: pointer;
+    color: vars.$black;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(to left, vars.$black, vars.$gray, vars.$black, vars.$gray);
+
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: vars.$black;
+    transition: -webkit-text-fill-color 0.4s ease;
+
+    &:hover {
+        -webkit-text-fill-color: transparent;
+        animation: slideColors 1s linear infinite;
+    }
+}
+
+main {
+    width: 1100px;
+    max-width: 100%;
+    padding: 2.5rem;
+}
+
+footer {
+    border-top: 1px solid #d9d9d9;
+    text-align: center;
+    color: #444;
+    margin-top: auto;
+}
+
+@media only screen and (max-width: 699px) {
+    header, footer {
+        justify-content: space-between;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    footer nav {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 1rem;
+    }
+}
